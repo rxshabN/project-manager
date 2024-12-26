@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Project Manager",
   description:
-    "A project management tool built using NextJS 15, React 18, TypeScript and Appwrite.",
+    "A project manager tool built using NextJS 15, React 18, TypeScript and Appwrite.",
 };
 
 export default function RootLayout({
