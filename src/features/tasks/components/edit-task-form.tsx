@@ -99,7 +99,11 @@ export const EditTaskForm = ({
                   <FormItem>
                     <FormLabel className="text-black">Due date</FormLabel>
                     <FormControl>
-                      <DatePicker {...field} placeholder="Select a date" />
+                      <DatePicker
+                        {...field}
+                        placeholder="Select a date"
+                        className="border border-black/30 hover:bg-slate-300 transition"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -117,7 +121,10 @@ export const EditTaskForm = ({
                     >
                       <FormControl>
                         <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
-                          <SelectValue placeholder="Select assignee"></SelectValue>
+                          <SelectValue
+                            placeholder="Select assignee"
+                            className="text-muted-foreground"
+                          ></SelectValue>
                         </SelectTrigger>
                       </FormControl>
                       <FormMessage />
@@ -150,7 +157,10 @@ export const EditTaskForm = ({
                     >
                       <FormControl>
                         <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
-                          <SelectValue placeholder="Select status"></SelectValue>
+                          <SelectValue
+                            placeholder="Select status"
+                            className="text-muted-foreground"
+                          ></SelectValue>
                         </SelectTrigger>
                       </FormControl>
                       <FormMessage />
@@ -183,7 +193,10 @@ export const EditTaskForm = ({
                     >
                       <FormControl>
                         <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
-                          <SelectValue placeholder="Select a project"></SelectValue>
+                          <SelectValue
+                            placeholder="Select a project"
+                            className="text-muted-foreground"
+                          ></SelectValue>
                         </SelectTrigger>
                       </FormControl>
                       <FormMessage />
