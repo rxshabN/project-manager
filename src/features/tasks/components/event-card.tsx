@@ -37,7 +37,7 @@ export const EventCard = ({
     router.push(`/workspaces/${workspaceId}/tasks/${id}`);
   };
   return (
-    <div className="px-2">
+    <div className="px-2 overflow-hidden">
       <div
         onClick={onClick}
         className={cn(

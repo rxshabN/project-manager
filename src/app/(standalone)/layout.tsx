@@ -22,7 +22,7 @@ const StandaloneLayout = ({ children }: StandaloneLayoutProps) => {
           </Link>
           <UserButton />
         </nav>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center my-[5vh]">
           {children}
         </div>
       </div>
