@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Manager
 
-## Getting Started
+## Description
 
-First, run the development server:
+**Project Manager** is a comprehensive project management tool designed to help teams streamline their workflows and manage tasks effectively. Built with the latest technologies, it ensures a smooth and seamless user experience by avoiding server components for data fetching and leveraging optimized client-side techniques.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project utilizes a modern and powerful stack:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React 18**: For building dynamic and interactive user interfaces.
+- **Next.js 15**: For server-side rendering and optimized web applications.
+- **Hono**: A fast web framework.
+- **Appwrite**: Backend-as-a-service for authentication, database, and storage.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Libraries and Features
 
-## Learn More
+- **nuqs**: Used for utility functions and query handling.
+- **TypeScript (TS)**: Ensures type safety and better developer experience.
+- **zod** and **zodresolver**: For schema validation and form handling.
+- **shadcn**: A design system for building accessible components.
+- **TanStack Query**: For efficient and declarative data fetching.
+- **RPC**: Remote Procedure Calls for streamlined client-server communication.
+- **Cookies**: Used for state management and session persistence.
+- **Hello Pangea DnD**: For a smooth and interactive Kanban board implementation.
 
-To learn more about Next.js, take a look at the following resources:
+## Optimizations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application has been **refactored to avoid relying on server components** for data fetching. This change ensures:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- A smoother and faster user experience.
+- Improved handling of state and UI updates.
+- Better control over caching and performance.
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Intuitive task management with a drag-and-drop Kanban board.
+- Secure authentication and data storage using Appwrite.
+- Schema validation using `zod` for robust forms.
+- Optimized data fetching with TanStack Query and RPC.
