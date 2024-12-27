@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Project Manager",
   description:
-    "A project manager tool for creating workspaces, projects, tasks and handling them efficiently with your co-workers.",
+    "A project management tool for creating workspaces, projects, tasks and handling them efficiently with your co-workers.",
 };
 
 export default function RootLayout({
