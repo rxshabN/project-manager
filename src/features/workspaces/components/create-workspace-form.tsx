@@ -161,7 +161,7 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
               />
             </div>
             <DottedSeparator className="py-7" />
-            <div className="flex items-center justify-center w-fit lg:w-max">
+            <div className="flex items-center justify-center lg:justify-between">
               <Button
                 type="button"
                 size="lg"
