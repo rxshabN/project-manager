@@ -288,7 +288,6 @@ export const EditWorkspaceForm = ({
               Deleting a workspace is an irreversible action and will delete all
               data associated with it.
             </p>
-            <DottedSeparator className="pt-5 pb-1.5" />
             <Button
               className="mt-6 w-fit ml-auto"
               size="lg"

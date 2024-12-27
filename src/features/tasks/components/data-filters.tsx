@@ -69,7 +69,7 @@ export const DataFilters = ({ hideProjectFilter }: DataFiltersProps) => {
           onStatusChange(value);
         }}
       >
-        <SelectTrigger className="w-full lg:w-auto h-8 text-muted-foreground hover:text-primary transition">
+        <SelectTrigger className="w-full lg:w-auto h-8 text-muted-foreground border border-black/30 hover:text-primary transition hover:border-black">
           <div className="flex items-center pr-2">
             <ListChecksIcon className="size-4 mr-2" />
             <SelectValue placeholder="Filter by status" />
@@ -91,7 +91,7 @@ export const DataFilters = ({ hideProjectFilter }: DataFiltersProps) => {
           onAssigneeChange(value);
         }}
       >
-        <SelectTrigger className="w-full lg:w-auto h-8 text-muted-foreground hover:text-primary transition">
+        <SelectTrigger className="w-full lg:w-auto h-8 border border-black/30 text-muted-foreground hover:text-primary transition hover:border-black">
           <div className="flex items-center pr-2">
             <UserIcon className="size-4 mr-2" />
             <SelectValue placeholder="Filter by assignee" />
@@ -114,7 +114,7 @@ export const DataFilters = ({ hideProjectFilter }: DataFiltersProps) => {
             onProjectChange(value);
           }}
         >
-          <SelectTrigger className="w-full lg:w-auto h-8 text-muted-foreground hover:text-primary transition">
+          <SelectTrigger className="w-full lg:w-auto h-8 border border-black/30 text-muted-foreground hover:text-primary transition hover:border-black">
             <div className="flex items-center pr-2">
               <FolderIcon className="size-4 mr-2" />
               <SelectValue placeholder="Filter by project" />
@@ -133,7 +133,7 @@ export const DataFilters = ({ hideProjectFilter }: DataFiltersProps) => {
       )}
       <DatePicker
         placeholder="Filter by due date"
-        className="h-8 w-full lg:w-auto"
+        className="h-8 w-full lg:w-auto text-muted-foreground border border-black/30 hover:border-black/30 hover:text-primary transition"
         value={dueDate ? new Date(dueDate) : undefined}
         onChange={(date) => {
           setFilters({ dueDate: date ? date.toISOString() : null });

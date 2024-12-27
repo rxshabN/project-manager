@@ -93,7 +93,7 @@ export const MembersList = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent side="bottom" align="end">
                     <DropdownMenuItem
-                      className="font-medium"
+                      className="font-medium hover:bg-slate-300"
                       onClick={() =>
                         handleUpdateMember(member.$id, memberRole.ADMIN)
                       }
@@ -102,7 +102,7 @@ export const MembersList = () => {
                       Set as Administrator
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      className="font-medium"
+                      className="font-medium hover:bg-slate-300"
                       onClick={() =>
                         handleUpdateMember(member.$id, memberRole.MEMBER)
                       }
@@ -111,7 +111,7 @@ export const MembersList = () => {
                       Set as Member
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      className="font-medium text-red-500 focus:text-red-500"
+                      className="font-medium text-red-500 focus:text-red-500 hover:bg-red-100"
                       onClick={() => handleDeleteMember(member.$id)}
                       disabled={isDeletingMember}
                     >

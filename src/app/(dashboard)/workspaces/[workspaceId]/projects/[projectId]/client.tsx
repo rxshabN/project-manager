@@ -35,7 +35,7 @@ export const ProjectIdClient = () => {
             image={project.imageUrl}
             className="size-8"
           />
-          <p className="text-lg font-sembold">{project.name}</p>
+          <p className="text-lg font-sembold text-white">{project.name}</p>
         </div>
         <div>
           <Button variant="secondary" size="sm" asChild>

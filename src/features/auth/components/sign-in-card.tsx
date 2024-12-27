@@ -97,7 +97,7 @@ export const SignInCard = () => {
           onClick={() => signUpWithGoogle()}
           variant="secondary"
           size="lg"
-          className="w-full"
+          className="w-full border border-black/30"
           disabled={isPending}
         >
           <FcGoogle className="mr-2 size-5" />
@@ -107,7 +107,7 @@ export const SignInCard = () => {
           onClick={() => signUpWithGithub()}
           variant="secondary"
           size="lg"
-          className="w-full"
+          className="w-full border border-black/30"
           disabled={isPending}
         >
           <FaGithub size={5} className="mr-2" />
@@ -118,7 +118,7 @@ export const SignInCard = () => {
         <DottedSeparator />
         <p className="text-center text-neutral-500 text-sm mt-4">
           Don&apos;t have an account? Sign up{" "}
-          <Link href="/sign-up" className="text-blue-500 underline">
+          <Link href="/sign-up" className="text-red-500 underline">
             here
           </Link>
         </p>

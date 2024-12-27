@@ -25,15 +25,18 @@ export const WorkspaceSwitcher = () => {
   return (
     <div className="flex flex-col gap-y-2">
       <div className="flex items-center justify-between">
-        <p className="text-xs uppercase text-neutral-500">Workspaces</p>
+        <p className="text-xs uppercase text-black">Workspaces</p>
         <RiAddCircleFill
           onClick={open}
-          className="size-5 text-neutral-500 cursor-pointer hover:opacity-75 transition"
+          className="size-5 text-black cursor-pointer"
         />
       </div>
       <Select onValueChange={onSelect} value={workspaceId}>
-        <SelectTrigger className="w-full bg-neutral-200 font-medium p-1">
-          <SelectValue placeholder="No workspace selected" />
+        <SelectTrigger className="w-full bg-neutral-200/40 font-medium px-2 py-5 hover:bg-slate-300 transition">
+          <SelectValue
+            placeholder="No workspace selected"
+            className="text-muted-foreground"
+          />
         </SelectTrigger>
         <SelectContent>
           {workspaces?.documents.map((workspace) => (

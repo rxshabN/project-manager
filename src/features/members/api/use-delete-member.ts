@@ -23,6 +23,9 @@ export const useDeleteMember = () => {
       if (response.status === 401) {
         throw new Error("Unauthorized");
       }
+      if (response.status === 409) {
+        throw new Error("Cannot delete the only member of the workspace");
+      }
       return (await response.json()) as ResponseType;
     },
     onSuccess: async () => {

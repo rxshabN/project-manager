@@ -95,7 +95,7 @@ export const SignUpCard = () => {
                   <FormControl>
                     <Input
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder="Enter a password"
                       {...field}
                     />
                   </FormControl>
@@ -117,7 +117,7 @@ export const SignUpCard = () => {
           onClick={() => signUpWithGoogle()}
           variant="secondary"
           size="lg"
-          className="w-full"
+          className="w-full border border-black/30"
           disabled={isPending}
         >
           <FcGoogle className="mr-2 size-5" />
@@ -127,10 +127,10 @@ export const SignUpCard = () => {
           onClick={() => signUpWithGithub()}
           variant="secondary"
           size="lg"
-          className="w-full"
+          className="w-full border border-black/30"
           disabled={isPending}
         >
-          <FaGithub size={5} className="mr-2" />
+          <FaGithub className="mr-2 size-5" />
           Sign up with GitHub
         </Button>
       </CardContent>
@@ -138,7 +138,7 @@ export const SignUpCard = () => {
         <DottedSeparator />
         <p className="text-center text-neutral-500 text-sm mt-4">
           Already have an account? Sign in{" "}
-          <Link href="/sign-in" className="text-blue-500 underline">
+          <Link href="/sign-in" className="text-red-500 underline">
             here
           </Link>
         </p>

@@ -75,7 +75,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Tasks ({total})</p>
           <Button variant="muted" size="icon" onClick={createTask}>
-            <PlusIcon className="size-4 text-neutral-400" />
+            <PlusIcon className="size-4 text-white" />
           </Button>
         </div>
         <DottedSeparator className="my-4" />
@@ -83,7 +83,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
           {data.map((task) => (
             <li key={task.$id}>
               <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
-                <Card className="shadow-none rounded-lg hover:opacity-75 transition">
+                <Card className="shadow-none rounded-lg hover:bg-slate-300 transition">
                   <CardContent className="p-4">
                     <p className="text-lg font-medium truncate">{task.name}</p>
                     <div className="flex items-center gap-x-2">
@@ -106,7 +106,12 @@ export const TaskList = ({ data, total }: TaskListProps) => {
           </li>
         </ul>
         <Button variant="muted" className="mt-4 w-full" asChild>
-          <Link href={`/workspaces/${workspaceId}/tasks`}>Show all</Link>
+          <Link
+            href={`/workspaces/${workspaceId}/tasks`}
+            className="text-white"
+          >
+            Show all
+          </Link>
         </Button>
       </div>
     </div>
@@ -126,8 +131,8 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
       <div className="bg-white border rounded-lg p-4">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Projects ({total})</p>
-          <Button variant="secondary" size="icon" onClick={createProject}>
-            <PlusIcon className="size-4 text-neutral-400" />
+          <Button variant="muted" size="icon" onClick={createProject}>
+            <PlusIcon className="size-4 text-white" />
           </Button>
         </div>
         <DottedSeparator className="my-4" />
@@ -135,7 +140,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
           {data.map((project) => (
             <li key={project.$id}>
               <Link href={`/workspaces/${workspaceId}/projects/${project.$id}`}>
-                <Card className="shadow-none rounded-lg hover:opacity-75 transition">
+                <Card className="shadow-none rounded-lg hover:bg-slate-300 transition">
                   <CardContent className="p-4 flex items-center gap-x-2.5">
                     <ProjectAvatar
                       className="size-10"
@@ -172,9 +177,9 @@ export const MembersList = ({ data, total }: MembersListProps) => {
       <div className="bg-white border rounded-lg p-4">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Members ({total})</p>
-          <Button variant="secondary" size="icon" asChild>
+          <Button variant="muted" size="icon" asChild>
             <Link href={`/workspaces/${workspaceId}/members`}>
-              <SettingsIcon className="size-4 text-neutral-400" />
+              <SettingsIcon className="size-4 text-white" />
             </Link>
           </Button>
         </div>

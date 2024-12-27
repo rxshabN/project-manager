@@ -79,7 +79,7 @@ export const CreateTaskForm = ({
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-black">Project Name</FormLabel>
+                    <FormLabel className="text-black">Task Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter task name" {...field} />
                     </FormControl>

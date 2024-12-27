@@ -48,21 +48,21 @@ export const TaskActions = ({ id, projectId, children }: TaskActionsProps) => {
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem
             onClick={onOpenTask}
-            className="font-medium p-[10px] focus:bg-transparent/10 transition"
+            className="font-medium p-[10px] focus:bg-slate-300 transition"
           >
             <ExternalLinkIcon className="size-4 mr-2 stroke-2" />
             Task details
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onOpenProject}
-            className="font-medium p-[10px] focus:bg-transparent/10 transition"
+            className="font-medium p-[10px] focus:bg-slate-300 transition"
           >
             <ExternalLinkIcon className="size-4 mr-2 stroke-2" />
             Open project
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => open(id)}
-            className="font-medium p-[10px] focus:bg-transparent/10 transition"
+            className="font-medium p-[10px] focus:bg-slate-300 transition"
           >
             <PencilIcon className="size-4 mr-2 stroke-2" />
             Edit task

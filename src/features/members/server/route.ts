@@ -80,7 +80,7 @@ const app = new Hono()
     if (allMembersInWorkspace.total === 1) {
       return c.json(
         { error: "Cannot delete the only member of the workspace" },
-        400
+        409
       );
     }
     await databases.deleteDocument(DATABASE_ID, MEMBERS_ID, memberId);

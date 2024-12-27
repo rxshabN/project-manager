@@ -47,26 +47,35 @@ export const TaskViewSwitcher = ({
   );
   return (
     <Tabs
-      className="flex-1 w-full border rounded-lg"
+      className="flex-1 w-full bg-white rounded-lg text-black"
       defaultValue={view}
       onValueChange={setView}
     >
       <div className="h-full flex flex-col overflow-auto p-4">
         <div className="flex flex-col gap-y-2 lg:flex-row justify-between items-center">
           <TabsList className="w-full lg:w-auto">
-            <TabsTrigger className="h-8 w-full lg:w-auto" value="table">
+            <TabsTrigger
+              className="h-8 w-full lg:w-auto hover:bg-slate-300 transition"
+              value="table"
+            >
               Table
             </TabsTrigger>
-            <TabsTrigger className="h-8 w-full lg:w-auto" value="kanban">
+            <TabsTrigger
+              className="h-8 w-full lg:w-auto hover:bg-slate-300 transition"
+              value="kanban"
+            >
               Kanban
             </TabsTrigger>
-            <TabsTrigger className="h-8 w-full lg:w-auto" value="calendar">
+            <TabsTrigger
+              className="h-8 w-full lg:w-auto hover:bg-slate-300 transition"
+              value="calendar"
+            >
               Calendar
             </TabsTrigger>
           </TabsList>
           <Button size="sm" className="w-full lg:w-auto" onClick={open}>
             <PlusIcon className="mr-2 size-4" />
-            New
+            New task
           </Button>
         </div>
         <DottedSeparator className="my-4" />

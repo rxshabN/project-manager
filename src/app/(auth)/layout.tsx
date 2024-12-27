@@ -6,7 +6,7 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   return (
-    <main className="bg-neutral-400 min-h-screen">
+    <main className="bg-black min-h-screen">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-col items-center justify-center max-h-screen">
           {children}

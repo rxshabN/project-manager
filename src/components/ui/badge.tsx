@@ -19,13 +19,13 @@ const badgeVariants = cva(
         [TaskStatus.TODO]:
           "border-transparent text-md bg-black text-white hover:bg-black/70",
         [TaskStatus.IN_PROGRESS]:
-          "border-transparent bg-yellow-400 text-md text-primary hover:bg-yellow-400/80",
+          "border-transparent bg-yellow-500 text-md text-white hover:bg-yellow-400/80",
         [TaskStatus.DONE]:
-          "border-transparent bg-emerald-400 text-md text-primary hover:bg-emerald-400/80",
+          "border-transparent bg-emerald-500 text-md text-white hover:bg-emerald-400/80",
         [TaskStatus.IN_REVIEW]:
-          "border-transparent bg-blue-400 text-md text-primary hover:bg-blue-400/80",
+          "border-transparent bg-blue-500 text-md text-white hover:bg-blue-400/80",
         [TaskStatus.BACKLOG]:
-          "border-transparent bg-red-400 text-md text-primary hover:bg-red-400/80",
+          "border-transparent bg-red-500 text-md text-white hover:bg-red-400/80",
       },
     },
     defaultVariants: {

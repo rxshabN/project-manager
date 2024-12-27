@@ -20,7 +20,7 @@ const statusIconMap: Record<TaskStatus, React.ReactNode> = {
   [TaskStatus.BACKLOG]: (
     <CircleDashedIcon className="size-[18px] text-red-400" />
   ),
-  [TaskStatus.TODO]: <CircleIcon className="size-[18px] text-black" />,
+  [TaskStatus.TODO]: <CircleIcon className="size-[18px] text-white" />,
   [TaskStatus.IN_PROGRESS]: (
     <CircleDotDashedIcon className="size-[18px] text-yellow-400" />
   ),
@@ -43,12 +43,17 @@ export const KanbanColumnHeader = ({
       <div className="flex items-center gap-x-2">
         {icon}
         <h2 className="text-sm font-medium">{snakeCaseToTitleCase(board)}</h2>
-        <div className="size-5 flex items-center justify-center rounded-md bg-neutral-900 text-xs text-white font-medium">
+        <div className="size-5 flex items-center justify-center rounded-md bg-white text-xs text-black font-medium">
           {taskCount}
         </div>
       </div>
-      <Button onClick={open} variant="ghost" size="icon" className="size-5">
-        <PlusIcon className="size-4 text-neutral-500" />
+      <Button
+        onClick={open}
+        variant="ghost"
+        size="icon"
+        className="size-5 rounded-md bg-white text-black"
+      >
+        <PlusIcon className="size-5 text-black bg-white rounded-md" />
       </Button>
     </div>
   );

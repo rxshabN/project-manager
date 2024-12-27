@@ -41,17 +41,19 @@ const CustomToolbar = ({ date, onNavigate }: CustomToolbarProps) => {
   return (
     <div className="flex mb-4 gap-x-2 items-center w-full lg:w-auto justify-center lg:justify-start">
       <Button
+        className="border border-black/30 hover:border-black"
         onClick={() => onNavigate("PREV")}
         variant="secondary"
         size="icon"
       >
         <ChevronLeftIcon className="size-4" />
       </Button>
-      <div className="flex items-center border border-input rounded-md px-3 py-2 h-8 justify-center w-full lg:w-auto">
+      <div className="flex items-center border border-black/30 text-primary rounded-md px-3 py-2 h-8 justify-center w-full lg:w-auto">
         <CalendarIcon className="mr-2 size-4" />
         <p className="text-sm">{format(date, "MMMM yyyy")}</p>
       </div>
       <Button
+        className="border border-black/30 hover:border-black"
         onClick={() => onNavigate("NEXT")}
         variant="secondary"
         size="icon"

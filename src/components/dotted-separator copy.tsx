@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-interface DottedSeparatorProps {
+interface DottedSeparator1Props {
   className?: string;
   color?: string;
   height?: string;
@@ -9,14 +9,14 @@ interface DottedSeparatorProps {
   direction?: "horizontal" | "vertical";
 }
 
-export const DottedSeparator = ({
+export const DottedSeparator1 = ({
   className,
-  color = "#ff0000",
+  color = "#000000",
   height = "2px",
   dotSize = "4px",
   gapSize = "6px",
   direction = "horizontal",
-}: DottedSeparatorProps) => {
+}: DottedSeparator1Props) => {
   const isHorizontal = direction === "horizontal";
 
   return (

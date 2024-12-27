@@ -46,14 +46,14 @@ export const TaskBreadcrumbs = ({ project, task }: TaskBreadcrumbsProps) => {
         className="size-6 lg:size-8"
       />
       <Link href={`/workspaces/${workspaceId}/projects/${project.$id}`}>
-        <p className="text-sm lg:text-lg font-semibold text-muted-foreground hover:opacity-75 transition">
+        <p className="text-sm lg:text-lg font-semibold text-white hover:opacity-75 transition">
           {project.name}
         </p>
       </Link>
       <ChevronRightIcon className="size-4 lg:size-5 text-muted-foreground" />
-      <p className="text-sm lg:text-lg font-semibold">{task.name}</p>
+      <p className="text-sm lg:text-lg font-semibold text-white">{task.name}</p>
       <Button
-        className="ml-auto"
+        className="ml-auto border-none"
         variant="destructive"
         size="sm"
         onClick={handleDeleteTask}

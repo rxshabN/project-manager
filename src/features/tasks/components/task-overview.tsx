@@ -17,7 +17,7 @@ export const TaskOverview = ({ task }: TaskOverviewProps) => {
   const { open } = useUpdateTaskModal();
   return (
     <div className="flex flex-col gap-y-4 col-span-1">
-      <div className="bg-muted rounded-lg p-4 bg-neutral-200">
+      <div className="bg-muted rounded-lg p-4 bg-white">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Overview</p>
           <Button size="sm" variant="secondary" onClick={() => open(task.$id)}>
@@ -28,7 +28,7 @@ export const TaskOverview = ({ task }: TaskOverviewProps) => {
         <DottedSeparator className="my-4" />
         <div className="flex flex-col gap-y-4">
           <OverviewPropery label="Assignee">
-            <MembersAvatar name={task.assignee.name} className="size-6" />
+            <MembersAvatar name={task.assignee.name} className="size-8" />
             <p className="text-sm font-medium">{task.assignee.name}</p>
           </OverviewPropery>
           <OverviewPropery label="Due date">

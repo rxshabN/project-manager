@@ -7,9 +7,9 @@
 .rbc-header {
   @apply text-sm;
   @apply font-normal;
-  @apply text-muted-foreground;
+  @apply text-black;
   @apply py-3;
-  @apply border-b-0;
+  @apply border-t-0;
 }
 
 .rbc-header + .rbc-header {
@@ -23,7 +23,7 @@
 }
 
 :not(.rbc-month-row ~ .rbc-month-row).rbc-month-row {
-  @apply rounded-t-md;
+  @apply rounded-t-md border-black border-collapse border-l-0 border-r-0;
 }
 
 .rbc-month-row:last-of-type {
@@ -32,19 +32,13 @@
 }
 
 .rbc-month-view {
-  @apply border-none;
+  @apply border border-black rounded-lg;
 }
 
 .rbc-date-cell {
   @apply p-2;
 }
 
-/* change this today bg color */
-
-/* .rbc-today {
-  background: inherit;
-} */
-/* 
-.rbc-off-range-bg {
-  background: inherit;
-} */
+.rbc-today {
+  @apply bg-cyan-500/30;
+}

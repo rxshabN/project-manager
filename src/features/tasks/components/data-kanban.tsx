@@ -140,7 +140,7 @@ export const DataKanban = ({ data, onChange }: DataKanbanProps) => {
           return (
             <div
               key={board}
-              className="flex-1 mx-2 bg-neutral-200 p-1.5 rounded-md min-w-[200px]"
+              className="flex-1 mx-2 bg-black/[0.85] p-1.5 rounded-lg text-white min-w-[200px]"
             >
               <KanbanColumnHeader
                 board={board}

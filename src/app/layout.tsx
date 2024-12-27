@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Project Manager",
   description:
-    "A project manager tool built using NextJS 15, React 18, TypeScript and Appwrite.",
+    "A project manager tool for creating workspaces, projects, tasks and handling them efficiently with your co-workers.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,9 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="Project Manager" />
       </head>
-      <body className={cn(inter.className, "antialiased min-h-screen")}>
+      <body
+        className={cn(inter.className, "antialiased min-h-screen bg-black")}
+      >
         <QueryProvider>
           <Toaster />
           <NuqsAdapter>{children}</NuqsAdapter>

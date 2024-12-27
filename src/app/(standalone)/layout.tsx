@@ -8,11 +8,17 @@ interface StandaloneLayoutProps {
 
 const StandaloneLayout = ({ children }: StandaloneLayoutProps) => {
   return (
-    <main className="bg-neutral-300 min-h-screen">
+    <main className="bg-black min-h-screen">
       <div className="mx-auto max-w-screen-2xl p-4">
         <nav className="flex justify-between items-center h-[73px]">
           <Link href="/">
-            <Image src="/icon.svg" alt="image of logo" height={85} width={85} />
+            <Image
+              src="/removebg.png"
+              alt="image of logo"
+              height={100}
+              width={100}
+              className="ml-2"
+            />
           </Link>
           <UserButton />
         </nav>

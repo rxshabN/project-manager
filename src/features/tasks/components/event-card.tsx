@@ -41,14 +41,14 @@ export const EventCard = ({
       <div
         onClick={onClick}
         className={cn(
-          "p-1.5 text-xs bg-white text-primary border rounded-md border-l-4 flex flex-col gap-y-1.5 cursor-pointer hover:opacity-75 transition",
+          "p-1.5 text-xs bg-white text-primary border rounded-md border-l-4 flex flex-col gap-y-1.5 cursor-pointer hover:bg-slate-400/70 transition",
           statusColorMap[status]
         )}
       >
         <p>{title}</p>
         <div className="flex items-center gap-x-1">
           <MembersAvatar name={assignee?.name} />
-          <div className="bg-neutral-300 size-1 rounded-full" />
+          <div className="bg-black size-1 rounded-full" />
           <ProjectAvatar
             name={project?.name}
             image={project?.imageUrl}
