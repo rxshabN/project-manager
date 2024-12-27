@@ -50,7 +50,7 @@ export const TaskBreadcrumbs = ({ project, task }: TaskBreadcrumbsProps) => {
           {project.name}
         </p>
       </Link>
-      <ChevronRightIcon className="size-4 lg:size-5 text-muted-foreground" />
+      <ChevronRightIcon className="size-4 lg:size-5 text-white" />
       <p className="text-sm lg:text-lg font-semibold text-white">{task.name}</p>
       <Button
         className="ml-auto border-none"

@@ -119,6 +119,7 @@ export const EditWorkspaceForm = ({
           <Button
             size="sm"
             variant="secondary"
+            className="border border-black/30 hover:border-black transition"
             onClick={
               onCancel
                 ? onCancel
@@ -256,10 +257,14 @@ export const EditWorkspaceForm = ({
             </p>
             <div className="mt-4">
               <div className="flex items-center gap-x-2">
-                <Input disabled value={fullInviteLink} />
+                <Input
+                  disabled
+                  value={fullInviteLink}
+                  className="border border-black/30"
+                />
                 <Button
                   onClick={handleCopyInviteLink}
-                  className="size-12"
+                  className="size-12 border border-black/30 hover:border-black transition"
                   variant="secondary"
                 >
                   <CopyIcon className="size-5" />

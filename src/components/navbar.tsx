@@ -8,7 +8,8 @@ import { MobileSidebar } from "./mobile-sidebar";
 const pathnameMap = {
   tasks: {
     title: "Tasks",
-    description: "View all tasks here.",
+    description:
+      "Create, edit and organize tasks with the drag-and-drop Kanban board.",
   },
   projects: {
     title: "Project Overview",

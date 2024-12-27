@@ -156,7 +156,7 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
               </Link>
             </li>
           ))}
-          <li className="text-sm text-muted-foreground text-center hidden first-of-type:block">
+          <li className="text-sm text-muted-foreground text-start hidden first-of-type:block">
             No projects found
           </li>
         </ul>

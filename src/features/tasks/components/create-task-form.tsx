@@ -111,7 +111,7 @@ export const CreateTaskForm = ({
                       onValueChange={field.onChange}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
                           <SelectValue placeholder="Select assignee"></SelectValue>
                         </SelectTrigger>
                       </FormControl>
@@ -144,7 +144,7 @@ export const CreateTaskForm = ({
                       onValueChange={field.onChange}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
                           <SelectValue placeholder="Select status"></SelectValue>
                         </SelectTrigger>
                       </FormControl>
@@ -177,7 +177,7 @@ export const CreateTaskForm = ({
                       onValueChange={field.onChange}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
                           <SelectValue placeholder="Select a project"></SelectValue>
                         </SelectTrigger>
                       </FormControl>
