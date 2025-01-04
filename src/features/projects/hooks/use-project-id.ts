@@ -2,5 +2,9 @@ import { useParams } from "next/navigation";
 
 export const useProjectId = () => {
   const params = useParams();
-  return params.projectId as string;
+  if (!params.projectId) {
+    return "";
+  } else {
+    return params.projectId as string;
+  }
 };
