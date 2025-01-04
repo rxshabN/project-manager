@@ -29,7 +29,7 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
         <TaskDate value={task.dueDate} className="text-xs" />
       </div>
       {task.projectId === null || task.projectId === undefined ? (
-        "No project assigned"
+        <p className="text-muted-foreground text-xs">No project assigned</p>
       ) : (
         <div className="flex items-center gap-x-1.5">
           <ProjectAvatar
