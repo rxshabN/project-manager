@@ -211,9 +211,6 @@ export const CreateTaskForm = ({
                             </div>
                           </SelectItem>
                         ))}
-                        <SelectItem value="">
-                          <div>None</div>
-                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </FormItem>
