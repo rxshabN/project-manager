@@ -6,6 +6,7 @@ import { ProjectAvatar } from "@/features/projects/components/projects-avatar";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { useRouter } from "next/navigation";
 import { Member } from "@/features/members/types";
+import { useProjectId } from "@/features/projects/hooks/use-project-id";
 
 interface EventCardProps {
   title: string;
@@ -31,6 +32,7 @@ export const EventCard = ({
   id,
 }: EventCardProps) => {
   const workspaceId = useWorkspaceId();
+  const projectId = useProjectId();
   const router = useRouter();
   const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -49,11 +51,15 @@ export const EventCard = ({
         <div className="flex items-center gap-x-1 overflow-hidden">
           <MembersAvatar name={assignee?.name} />
           <div className="bg-black size-1 rounded-full" />
-          <ProjectAvatar
-            name={project?.name}
-            image={project?.imageUrl}
-            className="w-[1.32rem] h-[1.32rem]"
-          />
+          {projectId === null || projectId === undefined ? (
+            <p className="text-xs text-muted-foreground">No project assigned</p>
+          ) : (
+            <ProjectAvatar
+              name={project?.name}
+              image={project?.imageUrl}
+              className="w-[1.32rem] h-[1.32rem]"
+            />
+          )}
         </div>
       </div>
     </div>

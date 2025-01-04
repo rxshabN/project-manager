@@ -45,16 +45,20 @@ export const columns: ColumnDef<Task>[] = [
     },
     cell: ({ row }) => {
       const project = row.original.project;
-      return (
-        <div className="ml-4 flex items-center gap-x-2 text-sm">
-          <ProjectAvatar
-            name={project.name}
-            image={project.imageUrl}
-            className="size-6"
-          />
-          <p className="line-clamp-1">{project.name}</p>
-        </div>
-      );
+      if (project === null || project === undefined) {
+        return "No project assigned";
+      } else {
+        return (
+          <div className="ml-4 flex items-center gap-x-2 text-sm">
+            <ProjectAvatar
+              name={project.name}
+              image={project.imageUrl}
+              className="size-6"
+            />
+            <p className="line-clamp-1">{project.name}</p>
+          </div>
+        );
+      }
     },
   },
   {

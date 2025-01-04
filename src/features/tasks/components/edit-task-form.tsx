@@ -194,7 +194,7 @@ export const EditTaskForm = ({
                       <FormControl>
                         <SelectTrigger className="border border-black/30 hover:bg-slate-300 transition">
                           <SelectValue
-                            placeholder="Select a project"
+                            placeholder="Select a project (optional)"
                             className="text-muted-foreground"
                           ></SelectValue>
                         </SelectTrigger>
