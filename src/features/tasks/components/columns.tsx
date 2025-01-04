@@ -128,18 +128,18 @@ export const columns: ColumnDef<Task>[] = [
       );
     },
   },
-  // {
-  //   id: "actions",
-  //   cell: ({ row }) => {
-  //     const id = row.original.$id;
-  //     const projectId = row.original.project.$id;
-  //     return (
-  //       <TaskActions id={id} projectId={projectId}>
-  //         <Button variant="ghost" className="size-8 p-0 hover:bg-slate-300">
-  //           <MoreVertical className="mr-4" />
-  //         </Button>
-  //       </TaskActions>
-  //     );
-  //   },
-  // },
+  {
+    id: "actions",
+    cell: ({ row }) => {
+      const id = row.original.$id;
+      const projectId = row.original.project.$id || undefined;
+      return (
+        <TaskActions id={id} projectId={projectId}>
+          <Button variant="ghost" className="size-8 p-0 hover:bg-slate-300">
+            <MoreVertical className="mr-4" />
+          </Button>
+        </TaskActions>
+      );
+    },
+  },
 ];

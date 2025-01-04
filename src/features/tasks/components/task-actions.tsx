@@ -13,7 +13,7 @@ import { useUpdateTaskModal } from "../hooks/use-update-task-modal";
 
 interface TaskActionsProps {
   id: string;
-  projectId: string;
+  projectId?: string;
   children: React.ReactNode;
 }
 
@@ -53,13 +53,15 @@ export const TaskActions = ({ id, projectId, children }: TaskActionsProps) => {
             <ExternalLinkIcon className="size-4 mr-2 stroke-2" />
             Task details
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={onOpenProject}
-            className="font-medium p-[10px] focus:bg-slate-300 transition"
-          >
-            <ExternalLinkIcon className="size-4 mr-2 stroke-2" />
-            Open project
-          </DropdownMenuItem>
+          {projectId && (
+            <DropdownMenuItem
+              onClick={onOpenProject}
+              className="font-medium p-[10px] focus:bg-slate-300 transition"
+            >
+              <ExternalLinkIcon className="size-4 mr-2 stroke-2" />
+              Open project
+            </DropdownMenuItem>
+          )}
           <DropdownMenuItem
             onClick={() => open(id)}
             className="font-medium p-[10px] focus:bg-slate-300 transition"
