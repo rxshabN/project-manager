@@ -84,7 +84,9 @@ const app = new Hono()
         query
       );
 
-      const projectIds = tasks.documents.map((task) => task.projectId);
+      const projectIds = tasks.documents.map(
+        (task) => task.projectId ?? "No project assigned"
+      );
       const assigneeIds = tasks.documents.map((task) => task.assigneeId);
       const projects = await databases.listDocuments<Project>(
         DATABASE_ID,
@@ -230,6 +232,9 @@ const app = new Hono()
     });
     if (!currentMember) {
       return c.json({ error: "Unauthorized" }, 401);
+    }
+    if (task.projectId === null || task.projectId === undefined) {
+      return c.json({ message: "Task does not belong to a project" });
     }
     const project = await databases.getDocument<Project>(
       DATABASE_ID,
