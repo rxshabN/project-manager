@@ -132,9 +132,8 @@ export const columns: ColumnDef<Task>[] = [
     id: "actions",
     cell: ({ row }) => {
       const id = row.original.$id;
-      const projectId = row.original.project.$id || undefined;
       return (
-        <TaskActions id={id} projectId={projectId}>
+        <TaskActions id={id}>
           <Button variant="ghost" className="size-8 p-0 hover:bg-slate-300">
             <MoreVertical className="mr-4" />
           </Button>
