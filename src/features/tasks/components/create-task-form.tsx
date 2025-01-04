@@ -30,6 +30,7 @@ import {
 import { MembersAvatar } from "@/features/members/components/members-avatar";
 import { TaskStatus } from "../types";
 import { ProjectAvatar } from "@/features/projects/components/projects-avatar";
+import { useProjectId } from "@/features/projects/hooks/use-project-id";
 
 interface CreateTaskFormProps {
   onCancel?: () => void;
@@ -43,11 +44,13 @@ export const CreateTaskForm = ({
   memberOptions,
 }: CreateTaskFormProps) => {
   const workspaceId = useWorkspaceId();
+  const projectId = useProjectId();
   const { mutate, isPending } = useCreateTask();
   const form = useForm<z.infer<typeof createTaskSchema>>({
     resolver: zodResolver(createTaskSchema.omit({ workspaceId: true })),
     defaultValues: {
       workspaceId,
+      projectId,
     },
   });
 
