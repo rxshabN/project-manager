@@ -233,14 +233,13 @@ const app = new Hono()
     if (!currentMember) {
       return c.json({ error: "Unauthorized" }, 401);
     }
-    if (task.projectId === null || task.projectId === undefined) {
-      return c.json({ message: "Task does not belong to a project" });
-    }
-    const project = await databases.getDocument<Project>(
-      DATABASE_ID,
-      PROJECTS_ID,
-      task.projectId
-    );
+    const project = task.projectId
+      ? await databases.getDocument<Project>(
+          DATABASE_ID,
+          PROJECTS_ID,
+          task.projectId
+        )
+      : null;
     const member = await databases.getDocument(
       DATABASE_ID,
       MEMBERS_ID,
