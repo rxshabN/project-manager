@@ -32,7 +32,7 @@ export const TaskViewSwitcher = ({
   const [view, setView] = useQueryState("task-view", { defaultValue: "table" });
   const { data: tasks, isLoading: isLoadingTasks } = useGetTasks({
     workspaceId,
-    projectId: paramProjectId || projectId,
+    projectId: paramProjectId || projectId || undefined,
     assigneeId,
     status,
     dueDate,

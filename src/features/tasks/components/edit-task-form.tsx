@@ -213,6 +213,9 @@ export const EditTaskForm = ({
                             </div>
                           </SelectItem>
                         ))}
+                        <SelectItem value={""}>
+                          <div>None</div>
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </FormItem>

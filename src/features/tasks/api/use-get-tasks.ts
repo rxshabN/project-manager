@@ -4,7 +4,7 @@ import { TaskStatus } from "../types";
 
 interface useGetTasksProps {
   workspaceId: string;
-  projectId?: string | null;
+  projectId?: string | undefined;
   status?: TaskStatus | null;
   assigneeId?: string | null;
   dueDate?: string | null;
