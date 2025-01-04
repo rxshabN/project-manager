@@ -55,6 +55,12 @@ export const EditTaskForm = ({
         : undefined,
     },
   });
+  if (
+    initialValues.projectId === null ||
+    initialValues.projectId === undefined
+  ) {
+    initialValues.projectId = "No project assigned";
+  }
 
   const onSubmit = (values: z.infer<typeof createTaskSchema>) => {
     mutate(
