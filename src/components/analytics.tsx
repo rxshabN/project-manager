@@ -9,20 +9,12 @@ export const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
       <div className="w-full flex flex-row gap-x-2">
         <div className="flex items-center flex-1">
           <AnalyticsCard
-            title="Assigned tasks"
-            value={data.assignedTaskCount}
-            variant={data.assignedTaskDifference > 0 ? "up" : "down"}
-            increseValue={data.assignedTaskDifference}
-          />
-          <DottedSeparator direction="vertical" className="pl-2" />
-        </div>
-        <div className="flex items-center flex-1">
-          <AnalyticsCard
             title="Incomplete tasks"
             value={data.incompleteTaskCount}
             variant={data.incompleteTaskDifference > 0 ? "up" : "down"}
             increseValue={data.incompleteTaskDifference}
           />
+          <DottedSeparator direction="vertical" className="pl-2" />
         </div>
         <div className="flex items-center flex-1">
           <AnalyticsCard
@@ -39,6 +31,15 @@ export const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
             value={data.completeTaskCount}
             variant={data.completeTaskDifference > 0 ? "up" : "down"}
             increseValue={data.completeTaskDifference}
+          />
+          <DottedSeparator direction="vertical" className="pl-2" />
+        </div>
+        <div className="flex items-center flex-1">
+          <AnalyticsCard
+            title="Assigned tasks"
+            value={data.assignedTaskCount}
+            variant={data.assignedTaskDifference > 0 ? "up" : "down"}
+            increseValue={data.assignedTaskDifference}
           />
           <DottedSeparator direction="vertical" className="pl-2" />
         </div>
