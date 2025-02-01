@@ -50,7 +50,6 @@ export const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
             variant={data.taskDifference > 0 ? "up" : "down"}
             increseValue={data.taskDifference}
           />
-          <DottedSeparator direction="vertical" className="pl-2" />
         </div>
       </div>
       <ScrollBar orientation="horizontal" />
