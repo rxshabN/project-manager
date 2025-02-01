@@ -32,7 +32,7 @@ export const Projects = () => {
               className={cn(
                 "flex items-center gap-2.5 p-2.5 rounded-md cursor-pointer",
                 isActive
-                  ? "bg-black text-white shadow-xs"
+                  ? "bg-black text-white shadow-sm"
                   : "text-black hover:bg-slate-300 transition"
               )}
             >

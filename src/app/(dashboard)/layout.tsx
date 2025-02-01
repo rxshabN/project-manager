@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <Sidebar />
         </div>
         <div className="lg:pl-[264px] w-full">
-          <div className="mx-auto max-w-(--breakpoint-2xl) h-full">
+          <div className="mx-auto max-w-screen-2xl h-full">
             <Navbar />
             <main className="py-8 px-6 flex flex-col h-full">{children}</main>
           </div>

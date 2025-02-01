@@ -1,59 +1,44 @@
-/* .rbc-month-row */
 .rbc-month-row {
-  min-height: 180px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
+  @apply min-h-[180px];
+  @apply border-t;
+  @apply border-x;
 }
 
-/* .rbc-header */
 .rbc-header {
-  color: black;
-  font-weight: normal;
-  padding-top: 0.75rem; /* py-3 (padding: 0.75rem) */
-  padding-bottom: 0.75rem;
-  border-top: 0; /* border-t-0 */
+  @apply text-sm;
+  @apply font-normal;
+  @apply text-black;
+  @apply py-3;
+  @apply border-t-0;
 }
 
-/* .rbc-header + .rbc-header */
 .rbc-header + .rbc-header {
-  border-left: 0;
+  @apply border-l-0;
 }
 
-/* .rbc-button-link */
 .rbc-button-link {
-  color: black;
-  font-weight: normal;
-  color: #6b7280; /* text-muted-foreground (usually a muted gray color) */
+  @apply text-xs;
+  @apply font-normal;
+  @apply text-muted-foreground;
 }
 
-/* .rbc-month-row (with complex selector) */
 :not(.rbc-month-row ~ .rbc-month-row).rbc-month-row {
-  border-radius: 0.375rem 0.375rem 0 0; /* rounded-t-md */
-  border-left: none; /* border-l-0 */
-  border-right: none; /* border-r-0 */
-  border-color: black;
-  border-collapse: collapse;
+  @apply rounded-t-md border-black border-collapse border-l-0 border-r-0;
 }
 
-/* .rbc-month-row:last-of-type */
 .rbc-month-row:last-of-type {
-  border-bottom: 1px solid;
-  border-radius: 0 0.375rem 0.375rem 0; /* rounded-b-md */
+  @apply border-b;
+  @apply rounded-b-md;
 }
 
-/* .rbc-month-view */
 .rbc-month-view {
-  border: 1px solid black;
-  border-radius: 0.375rem; /* rounded-lg */
+  @apply border border-black rounded-lg;
 }
 
-/* .rbc-date-cell */
 .rbc-date-cell {
-  padding: 0.5rem; /* p-2 */
+  @apply p-2;
 }
 
-/* .rbc-today */
 .rbc-today {
-  background-color: rgba(38, 182, 238, 0.3); /* bg-cyan-500/30 */
+  @apply bg-cyan-500/30;
 }
