@@ -11,7 +11,7 @@ import { enUS } from "date-fns/locale";
 import { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import "./data-calendar.css";
+import "../../tasks/components/data-calendar.css";
 import { EventCard } from "./event-card";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";

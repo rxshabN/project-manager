@@ -1,44 +1,59 @@
+/* .rbc-month-row */
 .rbc-month-row {
-  @apply min-h-[180px];
-  @apply border-t;
-  @apply border-x;
+  min-height: 180px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
 }
 
+/* .rbc-header */
 .rbc-header {
-  @apply text-sm;
-  @apply font-normal;
-  @apply text-black;
-  @apply py-3;
-  @apply border-t-0;
+  color: black;
+  font-weight: normal;
+  padding-top: 0.75rem; /* py-3 (padding: 0.75rem) */
+  padding-bottom: 0.75rem;
+  border-top: 0; /* border-t-0 */
 }
 
+/* .rbc-header + .rbc-header */
 .rbc-header + .rbc-header {
-  @apply border-l-0;
+  border-left: 0;
 }
 
+/* .rbc-button-link */
 .rbc-button-link {
-  @apply text-xs;
-  @apply font-normal;
-  @apply text-muted-foreground;
+  color: black;
+  font-weight: normal;
+  color: #6b7280; /* text-muted-foreground (usually a muted gray color) */
 }
 
+/* .rbc-month-row (with complex selector) */
 :not(.rbc-month-row ~ .rbc-month-row).rbc-month-row {
-  @apply rounded-t-md border-black border-collapse border-l-0 border-r-0;
+  border-radius: 0.375rem 0.375rem 0 0; /* rounded-t-md */
+  border-left: none; /* border-l-0 */
+  border-right: none; /* border-r-0 */
+  border-color: black;
+  border-collapse: collapse;
 }
 
+/* .rbc-month-row:last-of-type */
 .rbc-month-row:last-of-type {
-  @apply border-b;
-  @apply rounded-b-md;
+  border-bottom: 1px solid;
+  border-radius: 0 0.375rem 0.375rem 0; /* rounded-b-md */
 }
 
+/* .rbc-month-view */
 .rbc-month-view {
-  @apply border border-black rounded-lg;
+  border: 1px solid black;
+  border-radius: 0.375rem; /* rounded-lg */
 }
 
+/* .rbc-date-cell */
 .rbc-date-cell {
-  @apply p-2;
+  padding: 0.5rem; /* p-2 */
 }
 
+/* .rbc-today */
 .rbc-today {
-  @apply bg-cyan-500/30;
+  background-color: rgba(38, 182, 238, 0.3); /* bg-cyan-500/30 */
 }
