@@ -54,7 +54,7 @@ export const Navigation = () => {
               className={cn(
                 "flex items-center gap-2.5 p-2.5 rounded-md font-medium",
                 isActive
-                  ? "bg-black text-white shadow-sm"
+                  ? "bg-black text-white shadow-xs"
                   : "text-black hover:bg-slate-300 transition"
               )}
             >

@@ -29,7 +29,7 @@ export const DottedSeparator1 = ({
       )}
     >
       <div
-        className={isHorizontal ? "flex-grow" : "flex-grow-0"}
+        className={isHorizontal ? "grow" : "grow-0"}
         style={{
           width: isHorizontal ? "100%" : height,
           height: isHorizontal ? height : "100%",
