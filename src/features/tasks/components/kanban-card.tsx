@@ -5,9 +5,11 @@ import { DottedSeparator } from "@/components/dotted-separator";
 import { MembersAvatar } from "@/features/members/components/members-avatar";
 import { TaskDate } from "./task-date";
 import { ProjectAvatar } from "@/features/projects/components/projects-avatar";
+import { Project } from "@/features/projects/types";
 
 interface KanbanCardProps {
   task: Task;
+  // project: Project;
 }
 
 export const KanbanCard = ({ task }: KanbanCardProps) => {
@@ -33,12 +35,14 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
       ) : (
         <div className="flex items-center gap-x-1.5">
           <ProjectAvatar
-            name={task.project.name}
-            image={task.project.imageUrl}
+            name={task.project?.name || ""}
+            image={task.project?.imageUrl || ""}
             className="w-[1.32rem] h-[1.32rem]"
             fallbackClassName="text-[10px]"
           />
-          <span className="text-xs font-medium">{task.project.name}</span>
+          <span className="text-xs font-medium">
+            {task.project?.name || ""}
+          </span>
         </div>
       )}
     </div>
