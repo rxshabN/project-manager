@@ -5,16 +5,18 @@ import { DottedSeparator } from "@/components/dotted-separator";
 import { MembersAvatar } from "@/features/members/components/members-avatar";
 import { TaskDate } from "./task-date";
 import { ProjectAvatar } from "@/features/projects/components/projects-avatar";
+import { Project } from "@/features/projects/types";
 
 interface KanbanCardProps {
   task: Task;
+  project: Project;
 }
 
-export const KanbanCard = ({ task }: KanbanCardProps) => {
+export const KanbanCard = ({ task, project }: KanbanCardProps) => {
   return (
     <div className="bg-white p-2.5 mb-1.5 rounded-lg shadow-sm space-y-3 text-black hover:bg-slate-300">
       <div className="flex items-start justify-between gap-x-2">
-        {/* <p className="text-sm line-clamp-2">{task.name}</p> */}
+        <p className="text-sm line-clamp-2">{task.name}</p>
         <TaskActions id={task.$id ?? ""}>
           <MoreHorizontal className="rounded-lg size-[18px] stroke-1 shrink-0 text-neutral-700" />
         </TaskActions>
@@ -28,17 +30,17 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
         <div className="size-1 rounded-full bg-black" />
         <TaskDate value={task.dueDate} className="text-xs" />
       </div>
-      {task.projectId === null || task.projectId === undefined ? (
+      {project.name === null || project.name === undefined ? (
         <p className="text-muted-foreground text-xs">No project assigned</p>
       ) : (
         <div className="flex items-center gap-x-1.5">
           <ProjectAvatar
-            name={task.project.name}
-            image={task.project.imageUrl}
+            name={project?.name || ""}
+            image={project?.imageUrl || ""}
             className="w-[1.32rem] h-[1.32rem]"
             fallbackClassName="text-[10px]"
           />
-          <span className="text-xs font-medium">{task.project.name}</span>
+          <span className="text-xs font-medium">{project?.name || ""}</span>
         </div>
       )}
     </div>
