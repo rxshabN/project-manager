@@ -53,6 +53,7 @@ export const EditTaskForm = ({
       dueDate: initialValues.dueDate
         ? new Date(initialValues.dueDate)
         : undefined,
+      projectId: initialValues.projectId ?? undefined,
     },
   });
   if (
