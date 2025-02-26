@@ -5,11 +5,9 @@ import { DottedSeparator } from "@/components/dotted-separator";
 import { MembersAvatar } from "@/features/members/components/members-avatar";
 import { TaskDate } from "./task-date";
 import { ProjectAvatar } from "@/features/projects/components/projects-avatar";
-import { Project } from "@/features/projects/types";
 
 interface KanbanCardProps {
   task: Task;
-  // project: Project;
 }
 
 export const KanbanCard = ({ task }: KanbanCardProps) => {
