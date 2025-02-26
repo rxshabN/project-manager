@@ -28,7 +28,9 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
         <div className="size-1 rounded-full bg-black" />
         <TaskDate value={task.dueDate} className="text-xs" />
       </div>
-      {task.projectId === null || task.projectId === undefined ? (
+      {task.projectId === "" ||
+      task.projectId === null ||
+      task.projectId === undefined ? (
         <p className="text-muted-foreground text-xs">No project assigned</p>
       ) : (
         <div className="flex items-center gap-x-1.5">
@@ -39,7 +41,7 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
             fallbackClassName="text-[10px]"
           />
           <span className="text-xs font-medium">
-            {task.project?.name || ""}
+            {task.project?.name || "No project assigned"}
           </span>
         </div>
       )}
