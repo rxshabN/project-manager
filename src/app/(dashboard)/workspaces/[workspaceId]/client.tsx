@@ -80,27 +80,31 @@ export const TaskList = ({ data, total }: TaskListProps) => {
         </div>
         <DottedSeparator className="my-4" />
         <ul className="flex flex-col gap-y-4">
-          {data.map((task) => (
-            <li key={task.$id}>
-              <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
-                <Card className="shadow-none rounded-lg hover:bg-slate-300 transition">
-                  <CardContent className="p-4">
-                    <p className="text-lg font-medium truncate">{task.name}</p>
-                    <div className="flex items-center gap-x-2">
-                      <p className="text-sm">{task.project?.name}</p>
-                      <div className="size-1 rounded-full bg-neutral-300" />
-                      <div className="text-sm text-muted-foreground flex items-center">
-                        <CalendarIcon className="size-3 mr-1" />
-                        <span className="truncate">
-                          {formatDistanceToNow(new Date(task.dueDate))}
-                        </span>
+          {data
+            .filter((task) => task.status !== "DONE")
+            .map((task) => (
+              <li key={task.$id}>
+                <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
+                  <Card className="shadow-none rounded-lg hover:bg-slate-300 transition">
+                    <CardContent className="p-4">
+                      <p className="text-lg font-medium truncate">
+                        {task.name}
+                      </p>
+                      <div className="flex items-center gap-x-2">
+                        <p className="text-sm">{task.project?.name}</p>
+                        <div className="size-1 rounded-full bg-neutral-300" />
+                        <div className="text-sm text-muted-foreground flex items-center">
+                          <CalendarIcon className="size-3 mr-1" />
+                          <span className="truncate">
+                            {formatDistanceToNow(new Date(task.dueDate))}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            </li>
-          ))}
+                    </CardContent>
+                  </Card>
+                </Link>
+              </li>
+            ))}
           <li className="text-sm text-muted-foreground text-center hidden first-of-type:block">
             No tasks found
           </li>
