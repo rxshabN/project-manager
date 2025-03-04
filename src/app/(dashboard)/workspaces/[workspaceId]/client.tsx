@@ -53,9 +53,9 @@ export const WorkspaceIdClient = () => {
     <div className="h-full flex flex-col space-y-4">
       <Analytics data={workspaceAnalytics} />
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <TaskList data={tasks.documents} total={tasks.total} />
-        <ProjectList data={projects.documents} total={projects.total} />
-        <MembersList data={members.documents} total={members.total} />
+        <TaskList data={tasks.documents} />
+        <ProjectList data={projects.documents} />
+        <MembersList data={members.documents} />
       </div>
     </div>
   );
@@ -63,17 +63,16 @@ export const WorkspaceIdClient = () => {
 
 interface TaskListProps {
   data: Task[];
-  total: number;
 }
 
-export const TaskList = ({ data, total }: TaskListProps) => {
+export const TaskList = ({ data }: TaskListProps) => {
   const workspaceId = useWorkspaceId();
   const { open: createTask } = useCreateTaskModal();
   return (
     <div className="flex flex-col gap-y-4 col-span-1">
       <div className="bg-muted rounded-lg p-4">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-semibold">Tasks ({total})</p>
+          <p className="text-lg font-semibold">Tasks</p>
           <Button variant="muted" size="icon" onClick={createTask}>
             <PlusIcon className="size-4 text-white" />
           </Button>
@@ -124,17 +123,16 @@ export const TaskList = ({ data, total }: TaskListProps) => {
 
 interface ProjectListProps {
   data: Project[];
-  total: number;
 }
 
-export const ProjectList = ({ data, total }: ProjectListProps) => {
+export const ProjectList = ({ data }: ProjectListProps) => {
   const workspaceId = useWorkspaceId();
   const { open: createProject } = useCreateProjectModal();
   return (
     <div className="flex flex-col gap-y-4 col-span-1">
       <div className="bg-white border rounded-lg p-4">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-semibold">Projects ({total})</p>
+          <p className="text-lg font-semibold">Projects</p>
           <Button variant="muted" size="icon" onClick={createProject}>
             <PlusIcon className="size-4 text-white" />
           </Button>
@@ -171,16 +169,15 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
 
 interface MembersListProps {
   data: Member[];
-  total: number;
 }
 
-export const MembersList = ({ data, total }: MembersListProps) => {
+export const MembersList = ({ data }: MembersListProps) => {
   const workspaceId = useWorkspaceId();
   return (
     <div className="flex flex-col gap-y-4">
       <div className="bg-white border rounded-lg p-4">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-semibold">Members ({total})</p>
+          <p className="text-lg font-semibold">Members</p>
           <Button variant="muted" size="icon" asChild>
             <Link href={`/workspaces/${workspaceId}/members`}>
               <SettingsIcon className="size-4 text-white" />
