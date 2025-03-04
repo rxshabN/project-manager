@@ -26,7 +26,11 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
           fallbackClassName="text-[10px]"
         />
         <div className="size-1 rounded-full bg-black" />
-        <TaskDate value={task.dueDate} className="text-xs" />
+        <TaskDate
+          status={task.status}
+          value={task.dueDate}
+          className="text-xs"
+        />
       </div>
       {task.projectId === "" ||
       task.projectId === null ||
@@ -40,9 +44,7 @@ export const KanbanCard = ({ task }: KanbanCardProps) => {
             className="w-[1.32rem] h-[1.32rem]"
             fallbackClassName="text-[10px]"
           />
-          <span className="text-xs font-medium">
-            {task.project?.name}
-          </span>
+          <span className="text-xs font-medium">{task.project?.name}</span>
         </div>
       )}
     </div>

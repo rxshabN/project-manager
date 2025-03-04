@@ -103,7 +103,10 @@ export const columns: ColumnDef<Task>[] = [
     },
     cell: ({ row }) => {
       const dueDate = row.original.dueDate;
-      return <TaskDate value={dueDate} className="ml-[1.125rem]" />;
+      const status = row.original.status;
+      return (
+        <TaskDate status={status} value={dueDate} className="ml-[1.125rem]" />
+      );
     },
   },
   {
