@@ -8,8 +8,6 @@ import {
   CircleIcon,
   PlusIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useCreateTaskModal } from "../hooks/use-create-task-modal";
 
 interface KanbanColumnHeaderProps {
   board: TaskStatus;
@@ -36,7 +34,6 @@ export const KanbanColumnHeader = ({
   board,
   taskCount,
 }: KanbanColumnHeaderProps) => {
-  const { open } = useCreateTaskModal();
   const icon = statusIconMap[board];
   return (
     <div className="px-2 py-1.5 flex items-center justify-start">
