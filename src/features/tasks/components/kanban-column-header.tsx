@@ -6,7 +6,6 @@ import {
   CircleDotDashedIcon,
   CircleDotIcon,
   CircleIcon,
-  PlusIcon,
 } from "lucide-react";
 
 interface KanbanColumnHeaderProps {
