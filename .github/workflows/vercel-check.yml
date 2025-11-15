@@ -1,0 +1,53 @@
+name: Close Failed Vercel Deployments
+on:
+  check_run:
+    types: [completed]
+permissions:
+  pull-requests: write
+  checks: read
+jobs:
+  close-on-vercel-failure:
+    runs-on: ubuntu-latest
+    
+    if: |
+      github.event.check_run.conclusion == 'failure' &&
+      ( contains(github.event.check_run.name, 'Vercel') || 
+        contains(github.event.check_run.name, 'vercel') ||
+        contains(github.event.check_run.app.slug, 'vercel') )
+    steps:
+      - name: Check if PR is from Dependabot and close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # Check if there are any associated PRs
+          PR_COUNT=$(echo '${{ toJson(github.event.check_run.pull_requests) }}' | jq 'length')
+          
+          if [ "$PR_COUNT" -eq 0 ]; then
+            echo "This check run is not associated with a pull request."
+            exit 0
+          fi
+          
+          # Get the first PR number
+          PR_NUMBER=$(echo '${{ toJson(github.event.check_run.pull_requests) }}' | jq -r '.[0].number')
+          
+          echo "Vercel check failed for PR #$PR_NUMBER"
+          
+          # Check if PR is already merged or closed
+          PR_STATE=$(gh pr view $PR_NUMBER --repo $REPO --json state -q '.state')
+          
+          if [ "$PR_STATE" != "OPEN" ]; then
+            echo "PR #$PR_NUMBER is already $PR_STATE. Skipping."
+            exit 0
+          fi
+          
+          PR_AUTHOR=$(gh pr view $PR_NUMBER --repo $REPO --json author -q '.author.login')
+          
+          if [ "$PR_AUTHOR" == "dependabot[bot]" ]; then
+            echo "Closing Dependabot PR #$PR_NUMBER due to Vercel failure."
+            gh pr comment $PR_NUMBER --repo $REPO \
+              --body "🚫 This Dependabot PR was automatically closed because the Vercel preview deployment failed."
+            gh pr close $PR_NUMBER --repo $REPO
+          else
+            echo "PR #${PR_NUMBER} is not from Dependabot. Taking no action."
+          fi

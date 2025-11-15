@@ -1,49 +1,54 @@
 name: Dependabot Auto-Merge
-
 on:
   pull_request:
     types:
       - opened
       - synchronize
-
 permissions:
   contents: write
   pull-requests: write
-
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' # Ensure this only runs for Dependabot PRs
-
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
-      # Fetch Dependabot metadata
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v2.2.0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "22"
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Run tests
-      - name: Run tests
+      - name: Run build/tests
+        id: build
         run: npm run build
 
-      # Enable auto-merge if conditions are met
+      # If local build succeeds, enable auto-merge
       - name: Enable auto-merge
         if: success()
-        run: gh pr merge --auto --merge "${{ github.event.pull_request.html_url }}"
+        run: |
+          echo "Local build passed. Enabling auto-merge (will wait for all required checks)."
+          gh pr merge --auto --merge "${{ github.event.pull_request.html_url }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # If local build fails, close the PR immediately
+      - name: Close PR on local build failure
+        if: failure()
+        run: |
+          echo "Local build failed. Closing PR."
+          gh pr comment "${{ github.event.pull_request.html_url }}" \
+            --body "🚫 This Dependabot PR was automatically closed because the local build failed. Check the [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
+          gh pr close "${{ github.event.pull_request.html_url }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
